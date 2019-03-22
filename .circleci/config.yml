@@ -1,5 +1,3 @@
-version: 2
-
 jobs:
   build:
     docker:
@@ -14,8 +12,8 @@ jobs:
           name: Move artifacts
           command: |
             mkdir -p ~/results
-            mv examples/cv.pdf ~/results
-            mv examples/resume.pdf ~/results
-            mv examples/coverletter.pdf ~/results
+            #mv re/cv.pdf ~/results
+            mv resume/resume.pdf ~/results
+            #mv examples/coverletter.pdf ~/results
       - store_artifacts:
           path: ~/results
