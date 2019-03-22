@@ -12,7 +12,7 @@
 
 <div align="center">
   <a href="https://circleci.com/gh/posquit0/Awesome-CV">
-    <img alt="CircleCI" src="https://travis-ci.org/TidalPaladin/Awesome-CV.svg?branch=master" />
+    <img alt="CircleCI" src="https://circleci.com/gh/TidalPaladin/Awesome-CV/tree/master.svg?style=svg" />
 
   </a>
   <a
