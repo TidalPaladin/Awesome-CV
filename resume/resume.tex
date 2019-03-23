@@ -14,11 +14,11 @@
 %
 
 
-%-------------------------------------------------------------------------------
+%---------------------------------------------------------------------
 % CONFIGURATIONS
-%-------------------------------------------------------------------------------
+%---------------------------------------------------------------------
 % A4 paper size by default, use 'letterpaper' for US letter
-\documentclass[11pt, a4paper]{awesome-cv}
+\documentclass[11pt, letterpaper]{awesome-cv}
 
 % Configure page margins with geometry
 \geometry{left=1.4cm, top=.8cm, right=1.4cm, bottom=1.8cm, footskip=.5cm}
@@ -35,10 +35,10 @@
 
 % Colors for text
 % Uncomment if you would like to specify your own color
-% \definecolor{darktext}{HTML}{414141}
-% \definecolor{text}{HTML}{333333}
-% \definecolor{graytext}{HTML}{5D5D5D}
-% \definecolor{lighttext}{HTML}{999999}
+\definecolor{darktext}{HTML}{333333}
+\definecolor{text}{HTML}{414141}
+\definecolor{graytext}{HTML}{414141}
+\definecolor{lighttext}{HTML}{5D5D5D}
 
 % Set false if you don't want to highlight section with awesome color
 \setbool{acvSectionColorHighlight}{true}
@@ -46,16 +46,19 @@
 % If you would like to change the social information separator from a pipe (|) to something else
 \renewcommand{\acvHeaderSocialSep}{\quad\textbar\quad}
 
+\renewcommand*{\footerfont}{\sourcesanspro}
+\renewcommand*{\bodyfont}{\sourcesanspro}
+\renewcommand*{\bodyfontlight}{\sourcesansprolight}
 
-%-------------------------------------------------------------------------------
+%---------------------------------------------------------------------
 %	PERSONAL INFORMATION
 %	Comment any of the lines below if they are not required
-%-------------------------------------------------------------------------------
+%---------------------------------------------------------------------
 % Available options: circle|rectangle,edge/noedge,left/right
 % \photo[rectangle,edge,right]{./examples/profile}
-\name{Scott}{Waggener}
+\name{Scott Chase}{Waggener}
 \position{Machine Learning{\enskip\cdotp\enskip}Data Science}
-\address{989 Loop Rd, Apt 3.422, Richardson, Texas, ZIPCODE}
+\address{989 Loop Rd, Apt 3.422, Richardson, Texas, 75080}
 
 \mobile{(361)-215-6102}
 \email{scw180000@utdallas.edu}
@@ -75,7 +78,7 @@
 %\quote{``Be the change that you want to see in the world."}
 
 
-%-------------------------------------------------------------------------------
+%---------------------------------------------------------------------
 \begin{document}
 
 % Print the header with above personal informations
@@ -89,13 +92,12 @@
   {Scott Waggener~~~·~~~Résumé}
   {\thepage}
 
-%-------------------------------------------------------------------------------
+%---------------------------------------------------------------------
 %	CV/RESUME CONTENT
 %	Each section is imported separately, open each file in turn to modify content
-%-------------------------------------------------------------------------------
-\input{resume/summary.tex}
+%---------------------------------------------------------------------
 \input{resume/experience.tex}
 \input{resume/education.tex}
 \input{resume/projects.tex}
-%-------------------------------------------------------------------------------
+%---------------------------------------------------------------------
 \end{document}

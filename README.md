@@ -20,7 +20,7 @@
     <img alt="Resume" src="https://img.shields.io/badge/resume-pdf-green.svg" />
   </a>
   <a
-  href="https://raw.githubusercontent.com/tidalpaladin/Awesome-CV/master/coverletter/coverletter.pdf">
+  href="https://raw.githubusercontent.com/tidalpaladin/Awesome-CV/master/resume/coverletter.pdf">
     <img alt="Coverletter" src="https://img.shields.io/badge/coverletter-pdf-green.svg" />
   </a>
 </div>
