@@ -14,6 +14,6 @@ jobs:
             mkdir -p ~/results
             #mv re/cv.pdf ~/results
             mv resume/resume.pdf ~/results
-            #mv examples/coverletter.pdf ~/results
+            mv resume/coverletter.pdf ~/results
       - store_artifacts:
           path: ~/results
