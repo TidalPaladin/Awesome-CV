@@ -22,4 +22,4 @@ git_push:
 		-u ${CIRCLE_PROJECT_USERNAME} \
 		-r ${CIRCLE_PROJECT_REPONAME} \
 		-c ${CIRCLE_SHA1} -delete \
-		$(cat /root/projects/results/VERSION) /root/project/results/
+		$(cat /root/project/results/VERSION) /root/project/results/

@@ -33,7 +33,7 @@ jobs:
             at: results
         - run:
             name: "Publish Release on GitHub"
-            command: cd /root/projects/results && make git_push
+            command: cd /root/project/results && make git_push
 
 workflows:
   version: 2
