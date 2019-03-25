@@ -16,12 +16,14 @@ jobs:
             mv resume/resume.pdf results/
             mv VERSION results/
             mv resume/coverletter.pdf results/
+            mv Makefile results/
       - persist_to_workspace:
           root: results
           paths:
             - resume.pdf
             - VERSION
             - coverletter.pdf
+            - Makefile
 
   publish-github-release:
       docker:
@@ -31,12 +33,7 @@ jobs:
             at: results
         - run:
             name: "Publish Release on GitHub"
-            command: |
-              override:
-                - >-
-                  ghr -t ${GITHUB_TOKEN} -u ${CIRCLE_PROJECT_USERNAME} -r ${CIRCLE_PROJECT_REPONAME}
-                  -c ${CIRCLE_SHA1} -delete
-                  $(cat /root/project/results/VERSION) /root/project/results/
+            command: cd /root/projects/results && make git_push
 
 workflows:
   version: 2

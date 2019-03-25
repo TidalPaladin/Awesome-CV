@@ -15,3 +15,11 @@ coverletter.pdf: $(SRC_DIR)/coverletter.tex
 
 clean:
 	rm -rf $(SRC_DIR)/*.pdf *.log *.aux *.out
+
+git_push:
+	ghr \
+		-t ${GITHUB_TOKEN} \
+		-u ${CIRCLE_PROJECT_USERNAME} \
+		-r ${CIRCLE_PROJECT_REPONAME} \
+		-c ${CIRCLE_SHA1} -delete \
+		$(cat /root/projects/results/VERSION) /root/project/results/
