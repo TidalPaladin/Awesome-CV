@@ -28,7 +28,7 @@ jobs:
         - run:
             name: "Publish Release on GitHub"
             command: |
-              ls artifacts && ls artifacts/root && ls artifacts/root/results
+              ls artifacts
               #VERSION=$(cat ./results/VERSION)
               #ghr -t ${GITHUB_TOKEN} -u ${CIRCLE_PROJECT_USERNAME} \
               #-r ${CIRCLE_PROJECT_REPONAME} -c ${CIRCLE_SHA1} \
