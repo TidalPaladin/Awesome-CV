@@ -2,8 +2,8 @@
 CC = xelatex
 
 RESUME_DIR = resume
-COVERLETTER_DIR = resume
-EXTRAS_DIR = extras
+COVERLETTER_DIR = coverletter
+EXTRAS_DIR = extra
 RESUME_SRCS = $(shell find $(RESUME_DIR)/$(EXTRAS_DIR) -name '*.tex')
 COVERLETTER_SRCS = $(shell find $(COVERLETTER_DIR)/$(EXTRAS_DIR) -name '*.tex')
 
@@ -16,5 +16,5 @@ coverletter.pdf: $(COVERLETTER_DIR)/coverletter.tex
 	$(CC) -output-directory=$(COVERLETTER_DIR) $<
 
 clean:
-	rm -rf $(RESUME_DIR)/*.pdf *.log *.aux *.out
-	rm -rf $(COVERLETTER_DIR)/*.pdf *.log *.aux *.out
+	cd $(RESUME_DIR) && rm -rf *.pdf *.log *.aux *.out
+	cd $(COVERLETTER_DIR) && rm -rf *.pdf *.log *.aux *.out
