@@ -4,7 +4,6 @@ jobs:
   build:
     docker:
       - image: thomasweise/texlive
-    working_directory: /tmp
     steps:
       - checkout
       - run:
@@ -27,14 +26,13 @@ jobs:
   publish-github-release:
       docker:
         - image: cibuilds/github:0.10
-      working_directory: /tmp
       steps:
         - attach_workspace:
-            at: /tmp/workspace
+            at: results
         - run:
             name: "Publish Release on GitHub"
             command: |
-              echo $(find)
+              echo $(find /)
               #VERSION=$(cat ./results/VERSION)
               #ghr -t ${GITHUB_TOKEN} -u ${CIRCLE_PROJECT_USERNAME} \
               #-r ${CIRCLE_PROJECT_REPONAME} -c ${CIRCLE_SHA1} \
