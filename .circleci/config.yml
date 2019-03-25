@@ -18,17 +18,26 @@ jobs:
             mv resume/coverletter.pdf ~/results
       - store_artifacts:
           path: ~/results
+      - persist_to_workspace:
+                # Must be an absolute path, or relative path from working_directory. This is a directory on the container which is
+                # taken to be the root directory of the workspace.
+                root: ~/results
+                # Must be relative path from root
+                paths:
+                  - resume.pdf
+                  - VERSION
+                  - coverletter.pdf
 
   publish-github-release:
       docker:
         - image: cibuilds/github:0.10
       steps:
         - attach_workspace:
-            at: ./artifacts
+            at: ~/results
         - run:
             name: "Publish Release on GitHub"
             command: |
-              ls artifacts
+              echo $(find)
               #VERSION=$(cat ./results/VERSION)
               #ghr -t ${GITHUB_TOKEN} -u ${CIRCLE_PROJECT_USERNAME} \
               #-r ${CIRCLE_PROJECT_REPONAME} -c ${CIRCLE_SHA1} \
