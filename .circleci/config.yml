@@ -1,3 +1,6 @@
+general:
+    branches:
+        only: master
 jobs:
   build:
     docker:
