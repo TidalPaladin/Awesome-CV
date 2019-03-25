@@ -24,14 +24,14 @@ jobs:
         - image: cibuilds/github:0.10
       steps:
         - attach_workspace:
-            at: ~/results
+            at: ./artifacts
         - run:
             name: "Publish Release on GitHub"
             command: |
-              VERSION=$(cat ~/results/VERSION)
+              VERSION=$(cat ./results/VERSION)
               ghr -t ${GITHUB_TOKEN} -u ${CIRCLE_PROJECT_USERNAME} \
               -r ${CIRCLE_PROJECT_REPONAME} -c ${CIRCLE_SHA1} \
-              -delete ${VERSION} ~/results/
+              -delete ${VERSION} ./results/
 
 workflows:
   version: 2
