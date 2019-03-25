@@ -42,6 +42,6 @@ workflows:
   build:
     jobs:
       - build
-      - publish-github-release:
-          requires:
-            - build
+        #- publish-github-release:
+        #requires:
+        #- build
