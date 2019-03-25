@@ -13,9 +13,9 @@ jobs:
           name: Move artifacts
           command: |
             mkdir -p results
-            mv resume/resume.pdf results/
+            mv resume.pdf results/
             mv VERSION results/
-            mv resume/coverletter.pdf results/
+            mv coverletter.pdf results/
             mv Makefile results/
       - persist_to_workspace:
           root: results
