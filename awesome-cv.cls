@@ -725,13 +725,13 @@
 % Usage: \makeletterclosing
 \newcommand*{\makeletterclosing}{%
   \vspace{3.4mm}
-  \lettertextstyle{\@letterclosing} \\\\
+  \lettertextstyle{\@letterclosing} \\
 	\includegraphics[width=0.25\linewidth]{coverletter/extra/sig.pdf} \\
   \letternamestyle{\@firstname\ \@lastname}
   \ifthenelse{\isundefined{\@letterenclosure}}
-    {\\}
+    {}
     {%
-      \\\\\\
+      \\\\
       \letterenclosurestyle{\@letterenclname: \@letterenclosure} \\
     }
 }
