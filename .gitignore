@@ -17,6 +17,7 @@
 ## Vim & Emacs temp files:
 .*sw[op]
 *~
+*.nfs*
 
 ### Mac OS X ###
 ## Mac OS X metadata files:

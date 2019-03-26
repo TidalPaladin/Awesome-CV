@@ -18,7 +18,7 @@
 % CONFIGURATIONS
 %-------------------------------------------------------------------------------
 % A4 paper size by default, use 'letterpaper' for US letter
-\documentclass[11pt, a4paper]{awesome-cv}
+\documentclass[11pt, letterpaper]{awesome-cv}
 
 % Configure page margins with geometry
 \geometry{left=1.4cm, top=.8cm, right=1.4cm, bottom=1.8cm, footskip=.5cm}
@@ -70,16 +70,8 @@
 %	LETTER INFORMATION
 %	All of the below lines must be filled out
 %-------------------------------------------------------------------
-% The company being applied to
-\recipient
-  {Company Recruitment Team}
-  {Google Inc.\\1600 Amphitheatre Parkway\\Mountain View, CA 94043}
-% The date on the letter, default is the date of compilation
-\letterdate{\today}
-% The title of the letter
-\lettertitle{Job Application for PLACEHOLDER}
-% How the letter is opened
-\letteropening{Dear Mr.PLACEHOLDER,}
+\input{coverletter/extra/letter.tex}
+
 % How the letter is closed
 \letterclosing{Sincerely,}
 % Any enclosures with the letter
@@ -106,14 +98,10 @@
 %--------------------------------------------------------------------
 %	LETTER CONTENT
 %--------------------------------------------------------------------
-\begin{cvletter}
 
 \input{coverletter/extra/about.tex}
 \input{coverletter/extra/company.tex}
 \input{coverletter/extra/whyme.tex}
-
-\end{cvletter}
-
 
 %--------------------------------------------------------------------
 % Print the signature and enclosures with above letter informations
