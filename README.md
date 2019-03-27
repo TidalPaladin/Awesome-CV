@@ -14,15 +14,19 @@
 
   <a href="https://circleci.com/gh/TidalPaladin/Awesome-CV">
     <img alt="CircleCI" src="https://circleci.com/gh/TidalPaladin/Awesome-CV/tree/master.svg?style=svg" />
-
   </a>
-  <a
-  href="https://raw.githubusercontent.com/tidalpaladin/Awesome-CV/master/resume.pdf">
+
+  <a href="https://raw.githubusercontent.com/tidalpaladin/Awesome-CV/master/resume.pdf">
     <img alt="Resume" src="https://img.shields.io/badge/resume-pdf-green.svg" />
   </a>
-  <a
-  href="https://raw.githubusercontent.com/tidalpaladin/Awesome-CV/master/coverletter.pdf">
+
+  <a href="https://raw.githubusercontent.com/tidalpaladin/Awesome-CV/master/coverletter.pdf">
     <img alt="Coverletter" src="https://img.shields.io/badge/coverletter-pdf-green.svg" />
+  </a>
+
+  <a
+	href="https://raw.githubusercontent.com/tidalpaladin/Awesome-CV/master/coverletter-generic.pdf">
+    <img alt="Generic Cover" src="https://img.shields.io/badge/coverletter-pdf-green.svg" />
   </a>
 </div>
 
