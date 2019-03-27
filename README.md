@@ -26,7 +26,7 @@
 
   <a
 	href="https://raw.githubusercontent.com/tidalpaladin/Awesome-CV/master/coverletter-generic.pdf">
-    <img alt="Generic Cover" src="https://img.shields.io/badge/coverletter-pdf-green.svg" />
+    <img alt="Generic Cover" src="https://img.shields.io/badge/pdf-generic__cover-brightgreen.svg" />
   </a>
 </div>
 
