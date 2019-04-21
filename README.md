@@ -28,13 +28,11 @@
 	href="https://raw.githubusercontent.com/tidalpaladin/Awesome-CV/master/coverletter-generic.pdf">
     <img alt="Generic Cover" src="https://img.shields.io/badge/generic%20cover-pdf-green.svg" />
   </a>
-</div>
 
-<br />
+# Awesome CV
 
-# Resume
+## Resume
+![resume](./img/resume.png)
 
-## Requirements
-
-A full TeX distribution is assumed.  [Various distributions for different operating systems (Windows, Mac, \*nix) are available](http://tex.stackexchange.com/q/55437) but TeX Live is recommended.
-You can [install TeX from upstream](http://tex.stackexchange.com/q/1092) (recommended; most up-to-date) or use `sudo apt-get install texlive-full` if you really want that.  (It's generally a few years behind.)
+## Coverletter
+![coverletter](./img/coverletter-generic.png)
