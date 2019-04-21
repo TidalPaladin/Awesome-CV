@@ -10,26 +10,21 @@
   LaTeX template for your outstanding job application
 </p>
 
-<div align="center">
-
+<h2 align="center">
   <a href="https://circleci.com/gh/TidalPaladin/Awesome-CV">
     <img alt="CircleCI" src="https://circleci.com/gh/TidalPaladin/Awesome-CV/tree/master.svg?style=svg" />
   </a>
+</h2>
 
+<h3 align="center">
   <a href="https://raw.githubusercontent.com/tidalpaladin/Awesome-CV/master/resume.pdf">
     <img alt="Resume" src="https://img.shields.io/badge/resume-pdf-green.svg" />
   </a>
 
-  <a href="https://raw.githubusercontent.com/tidalpaladin/Awesome-CV/master/coverletter.pdf">
+  <a href="https://raw.githubusercontent.com/tidalpaladin/Awesome-CV/master/coverletter-generic.pdf">
     <img alt="Coverletter" src="https://img.shields.io/badge/coverletter-pdf-green.svg" />
   </a>
-
-  <a
-	href="https://raw.githubusercontent.com/tidalpaladin/Awesome-CV/master/coverletter-generic.pdf">
-    <img alt="Generic Cover" src="https://img.shields.io/badge/generic%20cover-pdf-green.svg" />
-  </a>
-
-# Awesome CV
+</h3>
 
 ## Resume
 ![resume](./img/resume.png)
