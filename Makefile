@@ -1,36 +1,37 @@
-.PHONY: default
+.PHONY: default clean clean-tex spell
+
+SRC_DIR = src
+OUT_DIR = out
+EXTRAS_DIR = extra
+SOURCES = $(patsubst %/,%,$(shell cd $(SRC_DIR) && ls -d */))
+TEX_DEPS = fontawesome.sty awesome-cv.cls $(SRC_DIR)/sig.pdf
+
+
+IMG_DIR = img
+IMG_RES = 300
+IMG_FMT = png
+
+IMAGES = $(patsubst %,$(IMG_DIR)/%.$(IMG_FMT),$(SOURCES))
+PDFS = $(patsubst %,$(OUT_DIR)/%.pdf,$(SOURCES))
 
 CC = xelatex
-RESUME_DIR = resume
-COVERLETTER_DIR = coverletter
-COVERLETTER_G_DIR = coverletter-generic
-EXTRAS_DIR = extra
-IMG_DIR = img
+CCARGS = -interaction nonstopmode
 
-RESUME_SRCS = $(shell find $(RESUME_DIR)/$(EXTRAS_DIR) -name '*.tex')
-COVERLETTER_SRCS = $(shell find $(COVERLETTER_DIR)/$(EXTRAS_DIR) -name '*.tex')
-COVERLETTER_G_SRCS = $(shell find $(COVERLETTER_G_DIR)/$(EXTRAS_DIR) -name '*.tex')
+default: $(IMAGES) | $(PDFS)
 
-default: $(foreach x, coverletter coverletter-generic resume, $x.png)
+$(OUT_DIR)/%.pdf: $(SRC_DIR)/%/main.tex #$(SRC_DIR)/%/$(EXTRAS_DIR)/ $(DEPS)
+	cd $(<D) && $(CC) $(CCARGS) -jobname $(*F) $(<F)
+	mv $(<D)/$(@F) $(OUT_DIR)/
 
-coverletter.pdf: $(COVERLETTER_DIR)/coverletter.tex $(COVERLETTER_SRCS) awesome-cv.cls
-	$(CC) -interaction nonstopmode -output-directory=$(COVERLETTER_DIR) $<
-	mv $(COVERLETTER_DIR)/coverletter.pdf ./
+$(IMG_DIR)/%.$(IMG_FMT): $(OUT_DIR)/%.pdf
+	convert -density $(IMG_RES) $< $@
 
-coverletter-generic.pdf: $(COVERLETTER_G_DIR)/coverletter-generic.tex $(COVERLETTER_G_SRCS) awesome-cv.cls
-	$(CC) -interaction nonstopmode -output-directory=$(COVERLETTER_G_DIR) $<
-	mv $(COVERLETTER_G_DIR)/coverletter-generic.pdf ./
-
-resume.pdf: $(RESUME_DIR)/resume.tex $(RESUME_SRCS) awesome-cv.cls
-	$(CC) -interaction nonstopmode -output-directory=$(RESUME_DIR) $<
-	mv $(RESUME_DIR)/resume.pdf ./
-
-%.png: %.pdf
-	convert -density 300 $< $(IMG_DIR)/$(basename $<).png
+clean-tex:
+	cd $(OUT_DIR) && rm -rf *.log *.aux *.out
 
 clean:
-	rm -rf *.pdf *.log *.aux *.out
-	cd $(RESUME_DIR) && rm -rf *.pdf *.log *.aux *.out
-	cd $(COVERLETTER_DIR) && rm -rf *.pdf *.log *.aux *.out
-	cd $(COVERLETTER_G_DIR) && rm -rf *.pdf *.log *.aux *.out
 	rm -rf $(IMG_DIR)/*
+	cd $(OUT_DIR) && rm -rf *.pdf *.log *.aux *.out
+
+spell:
+	find $(SRC_DIR)/ -name '*.tex' -exec aspell check {} \;

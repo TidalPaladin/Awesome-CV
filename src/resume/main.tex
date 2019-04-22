@@ -1,22 +1,22 @@
 %!TEX TS-program = xelatex
 %!TEX encoding = UTF-8 Unicode
-% Awesome CV LaTeX Template for Cover Letter
+% Awesome CV LaTeX Template for CV/Resume
 %
 % This template has been downloaded from:
 % https://github.com/posquit0/Awesome-CV
 %
-% Authors:
+% Author:
 % Claud D. Park <posquit0.bj@gmail.com>
-% Lars Richter <mail@ayeks.de>
+% http://www.posquit0.com
 %
 % Template license:
 % CC BY-SA 4.0 (https://creativecommons.org/licenses/by-sa/4.0/)
 %
 
 
-%-------------------------------------------------------------------------------
+%---------------------------------------------------------------------
 % CONFIGURATIONS
-%-------------------------------------------------------------------------------
+%---------------------------------------------------------------------
 % A4 paper size by default, use 'letterpaper' for US letter
 \documentclass[11pt, letterpaper]{awesome-cv}
 
@@ -35,10 +35,6 @@
 
 % Colors for text
 % Uncomment if you would like to specify your own color
-% \definecolor{darktext}{HTML}{414141}
-% \definecolor{text}{HTML}{333333}
-% \definecolor{graytext}{HTML}{5D5D5D}
-% \definecolor{lighttext}{HTML}{999999}
 
 % Set false if you don't want to highlight section with awesome color
 \setbool{acvSectionColorHighlight}{true}
@@ -46,14 +42,16 @@
 % If you would like to change the social information separator from a pipe (|) to something else
 \renewcommand{\acvHeaderSocialSep}{\quad\textbar\quad}
 
+\renewcommand*{\footerfont}{\sourcesanspro}
+\renewcommand*{\bodyfont}{\sourcesanspro}
+\renewcommand*{\bodyfontlight}{\sourcesansprolight}
 
-%-------------------------------------------------------------------
+%---------------------------------------------------------------------
 %	PERSONAL INFORMATION
 %	Comment any of the lines below if they are not required
-%-------------------------------------------------------------------
+%---------------------------------------------------------------------
 % Available options: circle|rectangle,edge/noedge,left/right
-%\photo[circle,noedge,left]{./examples/profile}
-
+% \photo[rectangle,edge,right]{./examples/profile}
 \name{Scott Chase}{Waggener}
 \position{
 	Machine Learning{\enskip\cdotp\enskip}
@@ -61,45 +59,46 @@
 	Artificial Intelligence
 }
 \address{989 Loop Rd, Apt 3.422, Richardson, Texas, 75080}
+
 \mobile{(361)-215-6102}
 \email{scw180000@utdallas.edu}
 \github{TidalPaladin}
+%\linkedin{posquit0}
+% \gitlab{gitlab-id}
+% \stackoverflow{SO-id}{SO-name}
+% \twitter{@tidalpaladin}
+% \skype{skype-id}
+% \reddit{reddit-id}
+% \medium{madium-id}
+% \googlescholar{googlescholar-id}{name-to-display}
+%% \firstname and \lastname will be used
+% \googlescholar{googlescholar-id}{}
+% \extrainfo{extra informations}
+
+%\quote{``Be the change that you want to see in the world."}
 
 
-%-------------------------------------------------------------------
-%	LETTER INFORMATION
-%	All of the below lines must be filled out
-%-------------------------------------------------------------------
-
-% How the letter is closed
-\letterclosing{Sincerely,}
-% Any enclosures with the letter
-\letterenclosure[Attached]{Resume}
-
-
-%--------------------------------------------------------------------
+%---------------------------------------------------------------------
 \begin{document}
 
 % Print the header with above personal informations
 % Give optional argument to change alignment(C: center, L: left, R: right)
-\makecvheader[R]
+\makecvheader[C]
 
 % Print the footer with 3 arguments(<left>, <center>, <right>)
 % Leave any of these blank if they are not needed
 \makecvfooter
   {\today}
-  {Scott Chase Waggener~~~·~~~Cover Letter}
-  {}
+  {Scott Waggener~~~·~~~Résumé}
+  {\thepage}
 
-%--------------------------------------------------------------------
-%	LETTER CONTENT
-%--------------------------------------------------------------------
-
-\input{coverletter-generic/extra/about.tex}
-\input{coverletter-generic/extra/whyme.tex}
-
-%--------------------------------------------------------------------
-% Print the signature and enclosures with above letter informations
-\makeletterclosing
-
+%---------------------------------------------------------------------
+%	CV/RESUME CONTENT
+%	Each section is imported separately, open each file in turn to
+%   modify content
+%---------------------------------------------------------------------
+\input{extra/experience.tex}
+\input{extra/education.tex}
+\input{extra/projects.tex}
+%---------------------------------------------------------------------
 \end{document}

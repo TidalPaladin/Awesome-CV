@@ -726,7 +726,7 @@
 \newcommand*{\makeletterclosing}{%
   \vspace{3.4mm}
   \lettertextstyle{\@letterclosing} \\
-	\includegraphics[width=0.25\linewidth]{coverletter/extra/sig.pdf} \\
+	\includegraphics[width=0.25\linewidth]{extra/sig.pdf} \\
   \letternamestyle{\@firstname\ \@lastname}
   \ifthenelse{\isundefined{\@letterenclosure}}
     {}

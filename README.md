@@ -17,11 +17,13 @@
 </h2>
 
 <h3 align="center">
-  <a href="https://raw.githubusercontent.com/tidalpaladin/Awesome-CV/master/resume.pdf">
+  <a
+	href="https://raw.githubusercontent.com/tidalpaladin/Awesome-CV/master/out/resume.pdf">
     <img alt="Resume" src="https://img.shields.io/badge/resume-pdf-green.svg" />
   </a>
 
-  <a href="https://raw.githubusercontent.com/tidalpaladin/Awesome-CV/master/coverletter-generic.pdf">
+  <a
+	href="https://raw.githubusercontent.com/tidalpaladin/Awesome-CV/master/out/coverletter.pdf">
     <img alt="Coverletter" src="https://img.shields.io/badge/coverletter-pdf-green.svg" />
   </a>
 </h3>
@@ -30,4 +32,4 @@
 ![resume](./img/resume.png)
 
 ## Coverletter
-![coverletter](./img/coverletter-generic.png)
+![coverletter](./img/coverletter.png)
