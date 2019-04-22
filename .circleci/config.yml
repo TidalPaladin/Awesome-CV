@@ -9,39 +9,9 @@ jobs:
       - run:
           name: Compile
           command: make
-      - run:
-          name: Move artifacts
-          command: |
-            mkdir -p results
-            mv resume.pdf results/
-            mv VERSION results/
-            mv coverletter.pdf results/
-            mv Makefile results/
-      - persist_to_workspace:
-          root: results
-          paths:
-            - resume.pdf
-            - VERSION
-            - coverletter.pdf
-            - Makefile
-
-  publish-github-release:
-      docker:
-        - image: cibuilds/github:0.10
-      steps:
-        - attach_workspace:
-            at: results
-        - run:
-            name: "Publish Release on GitHub"
-            command:
-              ghr -t ${GITHUB_TOKEN} -u ${CIRCLE_PROJECT_USERNAME} -r ${CIRCLE_PROJECT_REPONAME} -c ${CIRCLE_SHA1} -delete '1.0' '/root/project/results/'
-
 
 workflows:
   version: 2
   build:
     jobs:
       - build
-        #- publish-github-release:
-        #requires:
-        #- build
