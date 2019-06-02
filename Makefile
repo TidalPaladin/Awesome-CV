@@ -1,4 +1,4 @@
-.PHONY: default clean clean-tex spell
+.PHONY: clean clean-tex spell
 
 SRC_DIR = src
 OUT_DIR = out
@@ -19,7 +19,7 @@ CCARGS = -interaction nonstopmode
 
 default: $(IMAGES) | $(PDFS)
 
-$(OUT_DIR)/%.pdf: $(SRC_DIR)/%/main.tex #$(SRC_DIR)/%/$(EXTRAS_DIR)/ $(DEPS)
+$(OUT_DIR)/%.pdf: $(SRC_DIR)/%/main.tex $(SRC_DIR)/%/$(EXTRAS_DIR)/ $(DEPS)
 	cd $(<D) && $(CC) $(CCARGS) -jobname $(*F) $(<F)
 	mv $(<D)/$(@F) $(OUT_DIR)/
 
