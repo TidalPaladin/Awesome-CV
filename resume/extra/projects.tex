@@ -1,7 +1,7 @@
 %-----------------------------------------------------------------
 %	SECTION TITLE
 %-----------------------------------------------------------------
-\cvsection{Projects}
+\cvsection{Academic Projects}
 
 %-----------------------------------------------------------------
 %	CONTENT
@@ -12,28 +12,37 @@
 
 %---------------------------------------------------------
   \cventry
+  	{Extractive summarization with BERT and other architectures} % Job title
+		{
+			\href{https://github.com/TidalPaladin/neural-summarizer}
+			{Automatic Summarization \faGithubSquare}
+		} % Organization
+  	{Oct. 2019 - Dec. 2019} % Date(s)
+    {} % Location
+	{
+		Reimplemented the BERTSUM extractive summarization network using
+		Pytorch and Docker to serve as a baseline model. Created an
+		alternate BERTSUM implementation using Tensorflow and Google Colab
+		to study the performance gains of TPU training at lower precision.
+	}
+%---------------------------------------------------------
+
+%---------------------------------------------------------
+  \cventry
   	{Student volunteer for UTD faculty} % Job title
 		{
 			\href{https://github.com/TidalPaladin/tiny-imagenet-demo}
 			{Tiny ImageNet Demonstrations \faGithubSquare}
 		} % Organization
-    {Richardson, Texas} % Location
   	{May. 2018 - Sep. 2018} % Date(s)
+    {} % Location
 	{
-	\begin{cvitems}
-		\item {
-				Developed scripts to produce a lower resolution version of
-				ImageNet.
-		}
-		\item {
-				Implemented vision networks based on Resnet and
-				Inception-Resnet for dominant object classification.
-		}
-		\item {
-				Achieved 53\% top-1 validation accuracy in 24 hours of
-				training using an Inception variant.
-		}
-	\end{cvitems}
+		Developed scripts using Bash and Docker to downsample
+		the ImageNet vision dataset to 64x64 pixels.
+		Implemented vision networks based on Resnet and
+		Inception-Resnet in Tensorflow for dominant object
+		classification, achieving 53\% top-1 validation accuracy
+		in 24 hours of training.
 	}
 %---------------------------------------------------------
 
@@ -44,81 +53,16 @@
 			\href{https://github.com/TidalPaladin/trader}
 			{Neural Stock Prediction \faGithubSquare}
 		} % Organization
-    {Richardson, Texas} % Location
   	{May. 2018 - Aug. 2018} % Date(s)
+    {} % Location
 	{
-	\begin{cvitems}
-		\item {
-				Implemented a Tensorflow compatible preprocessing pipeline using
-				Apache Spark capable of handling 8,000+ securities.
-		}
-		\item {
-				Designed a convolutional encoder with an attention-based
-				classification head to predict discretized future percent
-				change.
-		}
-		\item {
-				Achieved 51\% overall top-1 validation accuracy, with ongoing work to
-				examine accuracy over only high confidence predictions.
-		}
-	\end{cvitems}
+		Implemented a preprocessing pipeline with Apache Spark and Scala
+		to process daily stock histories for 8,000+ securities.
+		Created a convolutional and transformer based neural architecture
+		in Tensorflow 2.0 to predict future prices using a variety of
+		metrics, achieving 51\% overall top-1 validation accuracy.
 	}
 %---------------------------------------------------------
 
-%---------------------------------------------------------
-  \cventry
-    {Low Cost Digital Radiographs} % Job title
-		{
-			\href{https://github.com/TidalPaladin/xray-controller.git}
-			{X-Ray Photography \faGithubSquare}
-		} % Organization
-    {Rockport, Texas} % Location
-    {May. 2016 - Aug. 2018} % Date(s)
-	{
-	\begin{cvitems}
-		\item {
-			Designed an apparatus to capture high resolution
-			digital radiographs using under \$300 in X-ray equipment.
-		}
-		\item {
-			Implemented an beam control system that included multiple
-			redundant safety mechanisms.
-		}
-		\item {
-			Automated the capture of radiographs using MQTT and Python
-			to coordinate multiple pieces of hardware.
-		}
-		\item {
-			Explored post-processing techniques to remove X-Ray induced
-			noise from captured images.
-		}
-	\end{cvitems}
-	}
-%---------------------------------------------------------
-%---------------------------------------------------------
-  %\cventry
-  	%{Welcome Center Volunteer} % Job title
-    %{Driscoll Children's Hospital} % Organization
-    %{Corpus Christi, Texas} % Location
-    %{Mar. 2016 - May 2017} % Date(s)
-	%{
-	%\begin{cvitems} % Description(s) of tasks/responsibilities
-		%\item {
-			%227 hours of service
-		%}
-		%\item {
-			%Checked in hospital visitors
-		%}
-	%\end{cvitems}
-	%}
-%---------------------------------------------------------
-%---------------------------------------------------------
-  %\cventry
-  	%{Airplane - Single Engine - Land} % Job title
-    %{Private Pilot's Certificate} % Organization
-    %{Corpus Christi, Texas} % Location
-    %{Aug. 2010 - Aug 2011} % Date(s)
-	%{\phantom{x}}
-%---------------------------------------------------------
 \end{cventries}
 %---------------------------------------------------------

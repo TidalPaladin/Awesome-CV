@@ -1,0 +1,41 @@
+%--------------------------------------------------------------------
+%	SECTION TITLE
+%--------------------------------------------------------------------
+
+\newenvironment{cvshorts}{%
+  \vspace{\acvSectionContentTopSkip}
+  \vspace{-2mm}
+  \begin{center}
+    \setlength\tabcolsep{0pt}
+    \setlength{\extrarowheight}{0pt}
+    \begin{tabular*}{\textwidth}{@{\extracolsep{\fill}} L{\textwidth - 4.0cm} R{2.5cm}}
+}{%
+    \end{tabular*}
+  \end{center}
+}
+
+\newcommand*{\cvshort}[3]{%
+  \honorpositionstyle{#1} \honortitlestyle{#2} & \honorlocationstyle{#3} \\
+}
+
+\cvsection{Activites}
+
+%--------------------------------------------------------------------
+%	CONTENT
+%--------------------------------------------------------------------
+\begin{cvshorts}
+
+%---------------------------------------------------------
+  \cvshort
+    {Driscoll Children's Hospital Volunteer}
+  	{}
+    {Mar. 2016 - May 2017}
+%---------------------------------------------------------
+%---------------------------------------------------------
+  \cvshort
+    {Private Pilot's Certificate}
+  	{}
+    {Aug. 2010 - Aug 2011}
+%---------------------------------------------------------
+
+\end{cvshorts}
