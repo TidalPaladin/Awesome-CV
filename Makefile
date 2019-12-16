@@ -1,4 +1,4 @@
-.PHONY: clean clean-tex spell
+.PHONY: default spell clean %.spell
 
 SRC_DIR = src
 OUT_DIR = out
@@ -17,17 +17,23 @@ PDFS = $(patsubst %,$(OUT_DIR)/%.pdf,$(SOURCES))
 CC = xelatex
 CCARGS = -interaction nonstopmode
 
-default: $(IMAGES) | $(PDFS)
+coverletter.pdf: $(COVERLETTER_DIR)/coverletter.spell $(COVERLETTER_SRCS:.tex=.spell) awesome-cv.cls
+	$(CC) -interaction nonstopmode -output-directory=$(COVERLETTER_DIR) $(<:.spell=.tex)
+	mv $(COVERLETTER_DIR)/coverletter.pdf ./
 
-$(OUT_DIR)/%.pdf: $(SRC_DIR)/%/main.tex $(SRC_DIR)/%/$(EXTRAS_DIR)/ $(DEPS)
-	cd $(<D) && $(CC) $(CCARGS) -jobname $(*F) $(<F)
-	mv $(<D)/$(@F) $(OUT_DIR)/
+coverletter-generic.pdf: $(COVERLETTER_G_DIR)/coverletter-generic.spell $(COVERLETTER_G_SRCS:.tex=.spell) awesome-cv.cls
+	$(CC) -interaction nonstopmode -output-directory=$(COVERLETTER_G_DIR) $(<:.spell=.tex)
+	mv $(COVERLETTER_G_DIR)/coverletter-generic.pdf ./
 
-$(IMG_DIR)/%.$(IMG_FMT): $(OUT_DIR)/%.pdf
-	convert -density $(IMG_RES) $< $@
+resume.pdf: $(RESUME_DIR)/resume.spell $(RESUME_SRCS:.tex=.spell) awesome-cv.cls
+	$(CC) -interaction nonstopmode -output-directory=$(RESUME_DIR) $(<:.spell=.tex)
+	mv $(RESUME_DIR)/resume.pdf ./
 
 clean-tex:
 	cd $(OUT_DIR) && rm -rf *.log *.aux *.out
+
+%.spell: %.tex
+	aspell -t check $<
 
 clean:
 	rm -rf $(IMG_DIR)/*

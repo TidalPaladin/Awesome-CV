@@ -55,11 +55,6 @@
 %\photo[circle,noedge,left]{./examples/profile}
 
 \name{Scott Chase}{Waggener}
-\position{
-	Machine Learning{\enskip\cdotp\enskip}
-	Data Science{\enskip\cdotp\enskip}
-	Artificial Intelligence
-}
 \address{989 Loop Rd, Apt 3.422, Richardson, Texas, 75080}
 \mobile{(361)-215-6102}
 \email{scw180000@utdallas.edu}
@@ -70,12 +65,30 @@
 %	LETTER INFORMATION
 %	All of the below lines must be filled out
 %-------------------------------------------------------------------
+\input{coverletter/extra/letter.tex}
 
 % How the letter is closed
 \letterclosing{Sincerely,}
 % Any enclosures with the letter
 \letterenclosure[Attached]{Resume}
 
+
+\newcommand{\gpa}{4.0}
+\newcommand{\clintro}{To whom it may concern}
+\newcommand{\clcompany}{COMPANY}
+\newcommand{\clposition}{POSITION}
+\newcommand{\clto}{PERSON}
+
+\newcommand{\claddr}{
+  Google Inc.\\
+  1600 Amphitheatre Parkway\\
+  Mountain View, CA 94043
+}
+
+\newcommand{\clintroexp}{
+  designing and implementing neural networks 
+  and other machine learning algorithms
+}
 
 %--------------------------------------------------------------------
 \begin{document}
@@ -91,12 +104,18 @@
   {Scott Chase Waggener~~~·~~~Cover Letter}
   {}
 
+% Print the title with above letter informations
+\makelettertitle
+
 %--------------------------------------------------------------------
 %	LETTER CONTENT
 %--------------------------------------------------------------------
 
-\input{extra/about.tex}
-\input{extra/whyme.tex}
+
+\input{coverletter/extra/intro.tex}
+\input{coverletter/extra/about.tex}
+\input{coverletter/extra/whyme.tex}
+%\input{coverletter/extra/company.tex}
 
 %--------------------------------------------------------------------
 % Print the signature and enclosures with above letter informations
