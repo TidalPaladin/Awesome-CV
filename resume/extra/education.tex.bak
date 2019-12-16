@@ -15,10 +15,10 @@
     {Aug. 2018 - May 2020} % Date(s)
     {} % Location
     {
-      Collaborating with a research group to improve detection of micro-bubbles
+      Collaborating with a research group to improve detection of microbubbles
       in ultrasound images using neural approaches. 
       Worked with a faculty member to produce deep learning
-			demonstrations using TensorFlow 2.0, Google Colab, and Docker. 
+			demonstrations using Tensorflow 2.0, Google Colab, and Docker. 
     }
 
 %---------------------------------------------------------
@@ -29,11 +29,11 @@
     {} % Location
     {
 			Modified the hardware and software implementation of a scanning
-			tunneling microscope using LabVIEW to automate tip descent for
+			tunneling microscope using LabView to automate tip descent for
 			the physics senior lab.
 			Practiced the fundamentals of biomedical research through the
 			freshman research initiative as part of a research group
-			investigating supra-molecular sensors.
+			investigating supramolecular sensors.
     }
 %---------------------------------------------------------
 

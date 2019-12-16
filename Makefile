@@ -1,4 +1,4 @@
-.PHONY: default
+.PHONY: default spell clean %.spell
 
 CC = xelatex
 RESUME_DIR = resume
@@ -13,20 +13,23 @@ COVERLETTER_G_SRCS = $(shell find $(COVERLETTER_G_DIR)/$(EXTRAS_DIR) -name '*.te
 
 default: $(foreach x, coverletter coverletter-generic resume, $x.png)
 
-coverletter.pdf: $(COVERLETTER_DIR)/coverletter.tex $(COVERLETTER_SRCS) awesome-cv.cls
-	$(CC) -interaction nonstopmode -output-directory=$(COVERLETTER_DIR) $<
+coverletter.pdf: $(COVERLETTER_DIR)/coverletter.spell $(COVERLETTER_SRCS:.tex=.spell) awesome-cv.cls
+	$(CC) -interaction nonstopmode -output-directory=$(COVERLETTER_DIR) $(<:.spell=.tex)
 	mv $(COVERLETTER_DIR)/coverletter.pdf ./
 
-coverletter-generic.pdf: $(COVERLETTER_G_DIR)/coverletter-generic.tex $(COVERLETTER_G_SRCS) awesome-cv.cls
-	$(CC) -interaction nonstopmode -output-directory=$(COVERLETTER_G_DIR) $<
+coverletter-generic.pdf: $(COVERLETTER_G_DIR)/coverletter-generic.spell $(COVERLETTER_G_SRCS:.tex=.spell) awesome-cv.cls
+	$(CC) -interaction nonstopmode -output-directory=$(COVERLETTER_G_DIR) $(<:.spell=.tex)
 	mv $(COVERLETTER_G_DIR)/coverletter-generic.pdf ./
 
-resume.pdf: $(RESUME_DIR)/resume.tex $(RESUME_SRCS) awesome-cv.cls
-	$(CC) -interaction nonstopmode -output-directory=$(RESUME_DIR) $<
+resume.pdf: $(RESUME_DIR)/resume.spell $(RESUME_SRCS:.tex=.spell) awesome-cv.cls
+	$(CC) -interaction nonstopmode -output-directory=$(RESUME_DIR) $(<:.spell=.tex)
 	mv $(RESUME_DIR)/resume.pdf ./
 
 %.png: %.pdf
 	convert -density 300 $< $(IMG_DIR)/$(basename $<).png
+
+%.spell: %.tex
+	aspell -t check $<
 
 clean:
 	rm -rf *.pdf *.log *.aux *.out
