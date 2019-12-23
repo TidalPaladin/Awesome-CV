@@ -1,0 +1,136 @@
+%!TEX TS-program = xelatex
+%!TEX encoding = UTF-8 Unicode
+% Awesome CV LaTeX Template for CV/Resume
+%
+% This template has been downloaded from:
+% https://github.com/posquit0/Awesome-CV
+%
+% Author:
+% Claud D. Park <posquit0.bj@gmail.com>
+% http://www.posquit0.com
+%
+% Template license:
+% CC BY-SA 4.0 (https://creativecommons.org/licenses/by-sa/4.0/)
+%
+
+
+%---------------------------------------------------------------------
+% CONFIGURATIONS
+%---------------------------------------------------------------------
+% A4 paper size by default, use 'letterpaper' for US letter
+\documentclass[11pt, letterpaper]{awesome-cv}
+
+% Configure page margins with geometry
+\geometry{left=1.2cm, top=.8cm, right=1.2cm, bottom=1.2cm, footskip=.3cm}
+
+% Specify the location of the included fonts
+\fontdir[fonts/]
+
+% Color for highlights
+% Awesome Colors: awesome-emerald, awesome-skyblue, awesome-red, awesome-pink, awesome-orange
+%                 awesome-nephritis, awesome-concrete, awesome-darknight
+\colorlet{awesome}{awesome-red}
+% Uncomment if you would like to specify your own color
+% \definecolor{awesome}{HTML}{CA63A8}
+
+% Colors for text
+% Uncomment if you would like to specify your own color
+
+% Set false if you don't want to highlight section with awesome color
+\setbool{acvSectionColorHighlight}{true}
+
+% If you would like to change the social information separator from a pipe (|) to something else
+\renewcommand{\acvHeaderSocialSep}{\quad\textbar\quad}
+
+\renewcommand*{\footerfont}{\sourcesanspro}
+\renewcommand*{\bodyfont}{\sourcesanspro}
+\renewcommand*{\bodyfontlight}{\sourcesansprolight}
+
+%---------------------------------------------------------------------
+%	PERSONAL INFORMATION
+%	Comment any of the lines below if they are not required
+%---------------------------------------------------------------------
+% Available options: circle|rectangle,edge/noedge,left/right
+% \photo[rectangle,edge,right]{./examples/profile}
+\name{Scott Chase}{Waggener}
+\address{989 Loop Rd, Apt 3.422, Richardson, Texas, 75080}
+
+\mobile{(361)-215-6102}
+\email{scw180000@utdallas.edu}
+\github{TidalPaladin}
+%\linkedin{posquit0}
+% \gitlab{gitlab-id}
+% \stackoverflow{SO-id}{SO-name}
+% \twitter{@tidalpaladin}
+% \skype{skype-id}
+% \reddit{reddit-id}
+% \medium{madium-id}
+% \googlescholar{googlescholar-id}{name-to-display}
+%% \firstname and \lastname will be used
+% \googlescholar{googlescholar-id}{}
+% \extrainfo{extra informations}
+
+%\quote{``Be the change that you want to see in the world."}
+
+
+%---------------------------------------------------------------------
+\begin{document}
+
+% Print the header with above personal informations
+% Give optional argument to change alignment(C: center, L: left, R: right)
+\makecvheader[C]
+
+% Print the footer with 3 arguments(<left>, <center>, <right>)
+% Leave any of these blank if they are not needed
+\makecvfooter
+  {\today}
+  {Scott Waggener~~~·~~~References}
+  {\thepage}
+
+%---------------------------------------------------------------------
+%	CV/RESUME CONTENT
+%	Each section is imported separately, open each file in turn to
+%   modify content
+%---------------------------------------------------------------------
+\cvsection{References}
+\begin{cventries}
+%---------------------------------------------------------
+  \cventry
+    {
+      Lecturer, University of Texas at Dallas \newline
+      Machine Learning Lab Manager, Texas Instruments
+    } % Degree
+    {Dr. Arthur Redfern} % Institution
+    {} % Date(s)
+    {} % Location
+    {
+      Email: Arthur.Redfern@utdallas.edu
+    }
+  \newline
+  \newline
+
+  \cventry
+    {Human Resources, Cambria Adara Properties LLC.} % Degree
+    {Ms. Cynthia Monhollen} % Institution
+    {} % Date(s)
+    {} % Location
+    {
+      Email: texcyn@satx.rr.com \newline
+      Phone: (210)-326-8603
+    }
+  \newline
+  \newline
+
+  \cventry
+    {Owner, Action ATM} % Degree
+    {Mr. Gordon Scott} % Institution
+    {} % Date(s)
+    {} % Location
+    {
+      Email: gordonscottt@yahoo.com \newline
+      Phone: (361)-774-3051
+    }
+
+\end{cventries}
+%---------------------------------------------------------------------
+\end{document}

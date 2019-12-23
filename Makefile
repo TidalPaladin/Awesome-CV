@@ -25,6 +25,10 @@ resume.pdf: $(RESUME_DIR)/resume.spell $(RESUME_SRCS:.tex=.spell) awesome-cv.cls
 	$(CC) -interaction nonstopmode -output-directory=$(RESUME_DIR) $(<:.spell=.tex)
 	mv $(RESUME_DIR)/resume.pdf ./
 
+references.pdf: references/references.tex awesome-cv.cls
+	$(CC) -interaction nonstopmode -output-directory=references $< 
+	mv references/references.pdf ./
+
 %.png: %.pdf
 	convert -density 300 $< $(IMG_DIR)/$(basename $<).png
 
