@@ -12,6 +12,21 @@
 
 %---------------------------------------------------------
   \cventry
+  	{Super resolution sonography} % Job title
+		{
+			\href{https://github.com/TidalPaladin/sr-mb}
+      {\underline{Super Resolution Sonography}}
+		} % Organization
+  	{Jan. 2020 - May 2020} % Date(s)
+    {} % Location
+	{
+    Implemented vision models in PyTorch to localize sonography contrast agents.
+    Supervised an undergraduate student who assisted with implementation.
+	}
+%---------------------------------------------------------
+
+%---------------------------------------------------------
+  \cventry
   	{Extractive summarization with BERT and other architectures} % Job title
 		{
 			\href{https://github.com/TidalPaladin/neural-summarizer}
@@ -21,24 +36,8 @@
     {} % Location
 	{
     Implemented multiple networks based on the BertSum architecture using PyTorch 
-    and Docker. Explored the use of NVidia's Apex library to train float16 models 
+    and Docker. Explored the use of Nvidia's Apex library to train float16 models 
     in PyTorch.
-	}
-%---------------------------------------------------------
-
-%---------------------------------------------------------
-  \cventry
-  	{Java implementation based on Google File System} % Job title
-		{
-			\href{https://github.com/TidalPaladin/distributed-fs}
-      {\underline{Distributed File System}}
-		} % Organization
-  	{Nov. 2019 - Dec. 2019} % Date(s)
-    {} % Location
-	{
-    Implemented a distributed file system based on the Google File System using
-    Java. Automated the creation of multiple clients and servers using 
-    Docker Compose.
 	}
 %---------------------------------------------------------
 

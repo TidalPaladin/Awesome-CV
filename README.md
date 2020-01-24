@@ -6,9 +6,6 @@
   Awesome CV
 </h1>
 
-<p align="center">
-  LaTeX template for your outstanding job application
-</p>
 
 <h2 align="center">
   <a href="https://circleci.com/gh/TidalPaladin/Awesome-CV">
@@ -30,4 +27,4 @@
 ![resume](./img/resume.png)
 
 ## Coverletter
-![coverletter](./img/coverletter-generic.png)
+![coverletter](./img/coverletter.png)

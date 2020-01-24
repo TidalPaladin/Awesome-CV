@@ -6,12 +6,16 @@ extras := $$(patsubst $$(pc).tex, $$(pc).spell, $$(wildcard $$*/**/*.tex))
 vpath %.tex resume coverletter references
 
 
-default: img/coverletter.png img/resume.png out/references.pdf
+default: coverletter resume references
+
+resume: out/resume.pdf img/resume.png 
+coverletter: out/coverletter.pdf img/coverletter.png 
+references: out/references.pdf img/references.png 
 
 
 .SECONDEXPANSION:
 out/%.pdf: %.tex $(extras)
-	@echo $(TEX) -interaction nonstopmode -output-directory=$(@D) $<
+	$(TEX) -interaction nonstopmode -output-directory=$(@D) $<
 
 
 img/%.png: out/%.pdf
