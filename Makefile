@@ -1,43 +1,29 @@
-.PHONY: default spell clean %.spell
+.PHONY: clean spell
 
-CC = xelatex
-RESUME_DIR = resume
-COVERLETTER_DIR = coverletter
-COVERLETTER_G_DIR = coverletter-generic
-EXTRAS_DIR = extra
-IMG_DIR = img
+TEX = xelatex
+pc := %
+extras := $$(patsubst $$(pc).tex, $$(pc).spell, $$(wildcard $$*/**/*.tex))
+vpath %.tex resume coverletter references
 
-RESUME_SRCS = $(shell find $(RESUME_DIR)/$(EXTRAS_DIR) -name '*.tex')
-COVERLETTER_SRCS = $(shell find $(COVERLETTER_DIR)/$(EXTRAS_DIR) -name '*.tex')
-COVERLETTER_G_SRCS = $(shell find $(COVERLETTER_G_DIR)/$(EXTRAS_DIR) -name '*.tex')
 
-default: $(foreach x, coverletter coverletter-generic resume, $x.png)
+default: img/coverletter.png img/resume.png out/references.pdf
 
-coverletter.pdf: $(COVERLETTER_DIR)/coverletter.spell $(COVERLETTER_SRCS:.tex=.spell) awesome-cv.cls
-	$(CC) -interaction nonstopmode -output-directory=$(COVERLETTER_DIR) $(<:.spell=.tex)
-	mv $(COVERLETTER_DIR)/coverletter.pdf ./
 
-coverletter-generic.pdf: $(COVERLETTER_G_DIR)/coverletter-generic.spell $(COVERLETTER_G_SRCS:.tex=.spell) awesome-cv.cls
-	$(CC) -interaction nonstopmode -output-directory=$(COVERLETTER_G_DIR) $(<:.spell=.tex)
-	mv $(COVERLETTER_G_DIR)/coverletter-generic.pdf ./
+.SECONDEXPANSION:
+out/%.pdf: %.tex $(extras)
+	@echo $(TEX) -interaction nonstopmode -output-directory=$(@D) $<
 
-resume.pdf: $(RESUME_DIR)/resume.spell $(RESUME_SRCS:.tex=.spell) awesome-cv.cls
-	$(CC) -interaction nonstopmode -output-directory=$(RESUME_DIR) $(<:.spell=.tex)
-	mv $(RESUME_DIR)/resume.pdf ./
 
-references.pdf: references/references.tex awesome-cv.cls
-	$(CC) -interaction nonstopmode -output-directory=references $< 
-	mv references/references.pdf ./
+img/%.png: out/%.pdf
+	convert -density 300 $< $@
 
-%.png: %.pdf
-	convert -density 300 $< $(IMG_DIR)/$(basename $<).png
 
+.PHONY:
 %.spell: %.tex
-	aspell -t check $<
+	aspell --lang=en -c -t $<
+
 
 clean:
-	rm -rf *.pdf *.log *.aux *.out
-	cd $(RESUME_DIR) && rm -rf *.pdf *.log *.aux *.out
-	cd $(COVERLETTER_DIR) && rm -rf *.pdf *.log *.aux *.out
-	cd $(COVERLETTER_G_DIR) && rm -rf *.pdf *.log *.aux *.out
-	rm -rf $(IMG_DIR)/*
+	rm -rf img/*
+	rm -rf out/*
+	rm -rf **/*.log **/*.aux **/*.out
